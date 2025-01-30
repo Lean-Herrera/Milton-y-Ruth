@@ -1,0 +1,380 @@
+* {
+  margin: 0;
+}
+
+
+$color-fondo: #ffffff;
+$color-verde: #89ac76;
+$color-texto: #4b3832;
+$color-verde2: #c2e2b9;
+
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: $color-fondo;
+  // background-image: url("../imagenes/fondo.jpg"); 
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+
+  .invitacion {
+    text-align: center;
+    color: $color-verde;
+    width: 100%;
+    max-width: 500px;
+    top: -1%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+
+    .header .titulo {
+      font-size: 3.5rem;
+      font-weight: bold;
+      position: relative;
+      margin-top: 5rem;
+
+
+
+    }
+
+  }
+
+
+  $animation-duration: 600s; // Cambia este valor para ajustar la velocidad
+
+  .mapa-container {
+    position: relative;
+    overflow: hidden; // Oculta las partes fuera del contenedor
+    height: 200%; // Ajusta según necesites
+
+
+    .map {
+      position: absolute;
+      top: 1%;
+      transform: translateY(0%);
+      width: 500%; // Duplica el ancho del mapa para que la animación sea continua
+      display: flex; // Para colocar dos imágenes una al lado de la otra
+
+      img {
+        width: 34%; // Cada imagen ocupa la mitad del ancho del contenedor .map
+        height: 400px;
+      }
+
+      animation: moveWorld $animation-duration linear infinite;
+    }
+
+    @keyframes moveWorld {
+      from {
+        transform: translateX(-270%);
+      }
+
+      to {
+        transform: translateX(50%); // Mueve todo el conjunto a la izquierda
+      }
+    }
+  }
+
+
+  .mapa-container {
+    position: absolute;
+
+    width: 100%;
+    top: -1%;
+    z-index: -1;
+
+
+    .ruta-vuelo {
+      width: 100%;
+
+      img {
+        width: 110%;
+        height: 150px;
+        position: absolute;
+        left: -5%;
+        top: 8%;
+
+
+      }
+
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .puntos-cardinales {
+      width: 100px; // Ajusta el tamaño de la imagen
+      height: 105px;
+      animation: rotate 20s linear infinite; // Gira en 5 segundos de forma infinita
+      display: inline-block; // Asegura que funcione correctamente en línea
+      position: absolute;
+      top: 10%;
+      right: -3%;
+    }
+
+  }
+
+  .circulo {
+
+    z-index: -3;
+
+  }
+
+  .subtitulo {
+    display: grid;
+    position: absolute;
+    bottom: -5%;
+    width: 100%;
+
+    gap: 2rem;
+
+
+    p {
+      font-size: 2rem;
+      color: $color-verde;
+    }
+
+    h2 {
+
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: $color-verde;
+      text-align: center;
+    }
+  }
+
+
+  .segunda-seccion {
+    position: absolute;
+    bottom: -100%;
+
+    .despues {
+
+      width: 100%;
+      top: 0%;
+    }
+
+    .segundo-corazon {
+      position: absolute;
+      top: 2%;
+      width: 100%;
+      left: 0%;
+    }
+
+    .prepara {
+      position: absolute;
+      width: 70%;
+      top: 50%;
+      left: 15%;
+    }
+
+    .sello {
+
+      width: 25%;
+      left: 0;
+      bottom: -12%;
+      position: absolute;
+    }
+  }
+
+  .tercera-seccion {
+
+    position: absolute;
+    bottom: -190%;
+
+    .boleto {
+      width: 90%;
+    }
+
+
+  }
+
+  .cuarta-seccion {
+
+
+    position: absolute;
+    bottom: -275%;
+    width: 100%;
+    height: 100vh;
+
+    .puntos-cardinales {
+      top: 3%;
+      z-index: 1;
+    }
+
+    .ubicacion {
+
+      width: 32%;
+      position: absolute;
+      left: 33%;
+      top: 25%;
+
+    }
+
+    .escala {
+
+      position: absolute;
+      width: 80%;
+      left: 10%;
+      bottom: 2%;
+    }
+
+    .google-maps {
+
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      left: 40%;
+      bottom: 7%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+  }
+
+  .quinta-seccion {
+
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    bottom: -360%;
+
+    .viento {
+
+      width: 30%;
+      height: 30%;
+      position: absolute;
+      top: 0;
+      left: -8%;
+
+    }
+
+    .mapa-container {
+      top: 20%;
+      z-index: -1;
+
+      .puntos-cardinales {
+        top: 3%;
+        z-index: 1;
+      }
+
+    }
+
+    .ubicacion {
+
+      width: 32%;
+      position: absolute;
+      left: 33%;
+      top: 45%;
+
+    }
+
+
+    .destino {
+
+      position: absolute;
+      width: 78%;
+      left: 11%;
+      bottom: -17%;
+    }
+
+    .google-maps {
+
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      left: 40%;
+      bottom: -9%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+  }
+
+  .sexta-seccion {
+    position: absolute;
+    bottom: -465%;
+    width: 100%;
+    height: 100vh;
+
+    .viento {
+
+      width: 30%;
+      height: 30%;
+      position: absolute;
+      top: 0;
+      left: -8%;
+
+    }
+
+
+    .viento-2 {
+
+      position: absolute;
+      width: 30%;
+      height: 30%;
+      top: 15%;
+      right: 0%;
+
+    }
+
+    .mundo {
+
+      position: absolute;
+      width: 100%;
+      top: 20%;
+      left: 0;
+      z-index: -1;
+    }
+
+  }
+
+  .septima-seccion {
+
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    bottom: -550%;
+    z-index: -1;
+
+
+    .asistencia {
+
+      position: absolute;
+      left: 0%;
+      width: 100%;
+      z-index: -6;
+
+    }
+
+    .pasaporte {
+
+      position: absolute;
+      bottom: 60%;
+      left: 37%;
+      width: 25%;
+
+      img {
+
+        width: 100%;
+      }
+
+    }
+
+  }
+
+
+}
